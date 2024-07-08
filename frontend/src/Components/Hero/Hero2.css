@@ -1,0 +1,144 @@
+/* .cover-slides{
+    height: 100vh;
+}
+.slides-navigation a {
+    background: #d33b33;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    line-height: 90px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+.slides-navigation a i{
+    font-size: 40px;
+}
+.slides-navigation a:hover {
+    background: #010101;
+}
+.cover-slides .container{
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+.cover-slides .container > .row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.cover-slides .container > .row {
+    height: 100%;
+}
+.overlay-background {
+    background: #333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+.cover-slides h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: #fff;
+}
+.cover-slides p{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.slides-pagination a{
+    border: 2px solid #ffffff;
+}
+.slides-pagination a.current{
+    background: #d33b33;
+    border: 2px solid #d33b33;
+}
+.cover-slides p a{
+    font-size: 24px;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+} */
+#slides-shop {
+    /* width: 100%; /* Adjust width as needed */
+    /* height: 500px; Adjust height as needed */ 
+    margin: auto;
+    height: 500px; width: 1200px;
+    overflow: hidden; /* Prevent images from overflowing */
+    position: relative; /* Required for button positioning */
+    background-size: cover;
+  }
+  
+  .slides-container {
+    width: 300%; /* 100% per slide */
+    display: flex; /* Arrange slides horizontally */
+    animation: slideShow 10s infinite; /* Add animation */
+    background-size: cover;
+
+  }
+  
+  .slides-container li {
+    width: 33.33%; /* 100% divided by number of slides */
+    float: left; /* Not required with flexbox */
+    list-style: none; /* Remove default list style */
+  }
+  
+  .slides-container img {
+    width: 100%; /* Ensure images fill slides */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  @keyframes slideShow {
+    0% {
+      transform: translateX(0); /* Start from first slide */
+    }
+    33% {
+      transform: translateX(-33.33%); /* Move to second slide */
+    }
+    66% {
+      transform: translateX(-66.66%); /* Move to third slide */
+    }
+    100% {
+      transform: translateX(0); /* Back to first slide for seamless loop */
+    }
+  }
+  
+  .slides-navigation {
+    position: absolute; /* Position buttons within the container */
+    bottom: 10px; /* Adjust button position */
+    left: 50%; /* Center8*/
+  }
+
+  @media (max-width: 768px) {
+    #slides-shop {
+      height: 300px; /* Adjust height for smaller screens */
+    }
+    .slides-container li {
+      width: 50%; /* Adjust slide width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #slides-shop {
+      height: 200px; /* Adjust height for even smaller screens */
+    }
+    .slides-container li {
+      width: 100%; /* Display one slide at a time for very small screens */
+    }
+  }
+  
+  .slides-navigation {
+    position: absolute; /* Position buttons within the container */
+    bottom: 10px; /* Adjust button position */
+    left: 50%;
+    transform: translateX(-50%); /* Center buttons horizontally */
+  }
