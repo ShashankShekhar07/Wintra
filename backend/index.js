@@ -17,7 +17,6 @@ app.use(cors()); //React js will connect to backend on 4000 port
 
 
 //Database connection with mongodb
-// mongoose.connect("mongodb+srv://shashank:lRMRRr1GAu6kLYfC@cluster0.yf7snpe.mongodb.net/Shopify");
 mongoose.connect(process.env.CONNECTION_URL);
 app.get("/",(req,res)=>{
     res.send("Let's go")
@@ -302,7 +301,7 @@ const Order = mongoose.model("Order",{
         default: false,
     }
 })
-const stripe = new Stripe("sk_test_51P08uISBIJADaMz0g2CvnvoLl2nRFjuqyeYucH4MkmNHp7JcfCHzwGEd8OtynLjsEWUoIjGbOpDk0CehPxiCqNQl00t8R6FBbl")
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 app.post("/place",fetchUser,async(req,res)=>{
     const frontend_url = "http://localhost:3000"
