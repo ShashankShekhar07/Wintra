@@ -19,7 +19,7 @@ app.use(cors()); //React js will connect to backend on 4000 port
 //Database connection with mongodb
 mongoose.connect(process.env.CONNECTION_URL);
 app.get("/",(req,res)=>{
-    res.send("Let's go")
+    res.send("hey there")
 })
 
 //Image storage engine
@@ -411,6 +411,17 @@ app.post("/status",async(req,res)=>{
     catch(err){
         console.log("Error")
         res.json({success: false,message: "Error"})
+    }
+})
+
+app.post("/deleteorder",async(req,res)=>{
+    try{
+        await Order.findByIdAndDelete(req.body.orderId)
+        res.json({success:true,message: "Order deleted"});
+    }
+    catch(err){
+        console.log("Error")
+        res.json({success: false,message:"Error"})
     }
 })
 
