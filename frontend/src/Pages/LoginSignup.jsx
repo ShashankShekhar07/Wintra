@@ -13,7 +13,7 @@ const LoginSignup = () => {
   }
   const login = async() => {
     let responsedata;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://wintra.onrender.com/login',{
       method: 'POST',
       headers: {
           Accept: 'application/json',
@@ -36,7 +36,7 @@ const LoginSignup = () => {
   }
   const signup = async() => {
     let responsedata;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://wintra.onrender.com/signup',{
       method: 'POST',
       headers: {
           Accept: 'application/json',

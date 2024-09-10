@@ -44,7 +44,7 @@ const PlaceOrder = () => {
 
         console.log(orderData,data);
 
-    let response = await fetch("http://localhost:4000/place", {
+    let response = await fetch("https://wintra.onrender.com/place", {
         method: "POST",
         headers: {
           Accept: 'application/json',

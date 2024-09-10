@@ -16,14 +16,14 @@ const ShopContextProvider = (props) => {
     const [new_collections,setNew_collections]=useState([]); 
     const [token,setToken] = useState("");
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://wintra.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data));
 
         if(localStorage.getItem('auth-token')){
             setToken(localStorage.getItem("auth-token"));
             console.log("auth token aa gaya");
-            fetch("http://localhost:4000/getcart",{
+            fetch("https://wintra.onrender.com/getcart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) => {
         }
     },[])
     useEffect(()=>{
-        fetch('http://localhost:4000/newcollections')
+        fetch('https://wintra.onrender.com/newcollections')
         .then((response)=>response.json())
         .then((data)=>setNew_collections(data));
     },[])
@@ -45,7 +45,7 @@ const ShopContextProvider = (props) => {
     const addToCart =(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))    ;
         if(localStorage.getItem('auth-token')){
-            fetch("http://localhost:4000/addtocart",{
+            fetch("https://wintra.onrender.com/addtocart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -61,7 +61,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) =>{
         setCartItems((prev)=>({...prev,[itemId] : prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-            fetch("http://localhost:4000/removefromcart",{
+            fetch("https://wintra.onrender.com/removefromcart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -95,7 +95,7 @@ const ShopContextProvider = (props) => {
         }
         return totalItem;
     }
-    let url="http://localhost:4000"
+    let url="https://wintra.onrender.com"
     const contextValue = {url,token,getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart,new_collections};
     return (
         <ShopContext.Provider value={contextValue}>
