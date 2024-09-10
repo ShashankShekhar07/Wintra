@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     const fetchOrders = async()=>{
         
-        const url = "https://wintra.onrender.com/userorders"; // Replace with your backend URL
+        const url = "https://wintra-backend.onrender.com//userorders"; // Replace with your backend URL
 
         try {
           const response = await fetch(url, {

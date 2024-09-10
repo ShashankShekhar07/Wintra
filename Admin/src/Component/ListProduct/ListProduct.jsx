@@ -28,7 +28,7 @@ const ListProduct = () => {
   const [allproducts, setallproducts] = useState([]);
 
   const fetchInfo = async()=>{
-    await fetch('https://wintra.onrender.com/allproducts')
+    await fetch('https://wintra-backend.onrender.com//allproducts')
     .then((res)=>res.json())
     .then((data)=>{
       setallproducts(data)
@@ -40,7 +40,7 @@ const ListProduct = () => {
   }, [])
   
   const remove_product = async(id)=>{
-    await fetch('https://wintra.onrender.com/removeproduct',{
+    await fetch('https://wintra-backend.onrender.com//removeproduct',{
       method: 'POST',
       headers: {
         Accept: 'application/json',

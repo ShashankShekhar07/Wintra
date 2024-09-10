@@ -16,14 +16,14 @@ const ShopContextProvider = (props) => {
     const [new_collections,setNew_collections]=useState([]); 
     const [token,setToken] = useState("");
     useEffect(()=>{
-        fetch('https://wintra.onrender.com/allproducts')
+        fetch('https://wintra-backend.onrender.com//allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data));
 
         if(localStorage.getItem('auth-token')){
             setToken(localStorage.getItem("auth-token"));
             console.log("auth token aa gaya");
-            fetch("https://wintra.onrender.com/getcart",{
+            fetch("https://wintra-backend.onrender.com//getcart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) => {
         }
     },[])
     useEffect(()=>{
-        fetch('https://wintra.onrender.com/newcollections')
+        fetch('https://wintra-backend.onrender.com//newcollections')
         .then((response)=>response.json())
         .then((data)=>setNew_collections(data));
     },[])
@@ -45,7 +45,7 @@ const ShopContextProvider = (props) => {
     const addToCart =(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))    ;
         if(localStorage.getItem('auth-token')){
-            fetch("https://wintra.onrender.com/addtocart",{
+            fetch("https://wintra-backend.onrender.com//addtocart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -61,7 +61,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) =>{
         setCartItems((prev)=>({...prev,[itemId] : prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-            fetch("https://wintra.onrender.com/removefromcart",{
+            fetch("https://wintra-backend.onrender.com//removefromcart",{
                 method: "POST",
                 headers: {
                     Accept: 'application/form-data',
@@ -95,7 +95,7 @@ const ShopContextProvider = (props) => {
         }
         return totalItem;
     }
-    let url="https://wintra.onrender.com"
+    let url="https://wintra-backend.onrender.com/"
     const contextValue = {url,token,getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart,new_collections};
     return (
         <ShopContext.Provider value={contextValue}>

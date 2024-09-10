@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://wintra.onrender.com'
+export const url = 'https://wintra-backend.onrender.com/'
