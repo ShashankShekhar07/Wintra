@@ -1,5 +1,5 @@
 const Stripe= require("stripe")
-const PORT=4000;
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -15,6 +15,7 @@ dotenv.config({path: "config.env"});
 app.use(express.json());
 app.use(cors()); //React js will connect to backend on 4000 port
 
+const PORT=process.env.PORT || 4000;
 
 //Database connection with mongodb
 mongoose.connect(process.env.CONNECTION_URL);
