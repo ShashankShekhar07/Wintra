@@ -6,7 +6,7 @@ const Popular = () => {
   const [popularproducts,setpopularProducts] =useState([]);
 
   useEffect(() => {
-    fetch("https://wintra-backend.onrender.com//popularinwomen")
+    fetch("https://wintra-backend.onrender.com/popularinwomen")
     .then((response)=>response.json())
     .then((data)=>setpopularProducts(data));
 

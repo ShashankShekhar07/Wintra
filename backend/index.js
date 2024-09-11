@@ -15,7 +15,7 @@ dotenv.config({path: "config.env"});
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://wintra-front.onrender.com', // Allow frontend's origin
+    origin: process.env.CORS_LINK , // Allow frontend's origin
     methods: 'GET,POST,PUT,DELETE',
 }));
 const PORT=process.env.PORT || 4000;

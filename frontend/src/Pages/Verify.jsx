@@ -11,7 +11,7 @@ const Verify = () => {
     const {url} = useContext(ShopContext);
     const navigate= useNavigate();
     const verifyPayment = async()=>{ 
-        const url = "https://wintra-backend.onrender.com//verify"; // Replace with your backend URL
+        const url = "https://wintra-backend.onrender.com/verify"; // Replace with your backend URL
 
         try {
           const response = await fetch(url, {
@@ -48,7 +48,7 @@ const Verify = () => {
         // }
 
         
-        // let response = await fetch("https://wintra-backend.onrender.com//verify", {
+        // let response = await fetch("https://wintra-backend.onrender.com/verify", {
         //     method: "POST",
         //     // headers: {
         //     //   Accept: 'application/json',

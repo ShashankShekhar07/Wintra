@@ -7,7 +7,7 @@ import ListProduct from '../../Component/ListProduct/ListProduct'
 import Orders from '../../Component/Orders/Orders'
 
 const Admin = () => {
-  const url = "https://wintra-backend.onrender.com/"
+  const url = "https://wintra-backend.onrender.com"
   return (
     <div className="admin">
         <Sidebar/>

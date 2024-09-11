@@ -13,7 +13,7 @@ const LoginSignup = () => {
   }
   const login = async() => {
     let responsedata;
-    await fetch('https://wintra-backend.onrender.com//login',{
+    await fetch('https://wintra-backend.onrender.com/login',{
       method: 'POST',
       headers: {
           Accept: 'application/json',
@@ -36,7 +36,7 @@ const LoginSignup = () => {
   }
   const signup = async() => {
     let responsedata;
-    await fetch('https://wintra-backend.onrender.com//signup',{
+    await fetch('https://wintra-backend.onrender.com/signup',{
       method: 'POST',
       headers: {
           Accept: 'application/json',
