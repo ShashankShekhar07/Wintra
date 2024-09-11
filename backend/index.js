@@ -41,7 +41,7 @@ app.use('/images',express.static('upload/images'))
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
         success: 1,
-        image_url: `http://localhost:${PORT}/images/${req.file.filename}`
+        image_url: `https://wintra-backend.onrender.com/images/${req.file.filename}`
     })
 })
 
@@ -308,7 +308,7 @@ const Order = mongoose.model("Order",{
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 app.post("/place",fetchUser,async(req,res)=>{
-    const frontend_url = "http://localhost:3000"
+    const frontend_url = "https://wintra-front1.onrender.com"
     try{
         console.log(req.body.id);
         const newOrder = new Order({
