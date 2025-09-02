@@ -36,7 +36,7 @@ const Verify = () => {
             navigate("/"); // Navigate to home page
           }
         } catch (error) {
-          console.error("Error verifying payment:", error);
+          console.error("Error verifying payment", error);
           // Handle error gracefully (e.g., display an error message to the user)
         }
         // const response = await axios.post(url+"/verify",{success,orderId});
